@@ -6,6 +6,7 @@
   --first-bg-color: #2f303a;
   --secondary-bg-color: #f5f4fa;
   --icon-color: #afb1b8;
+  --accent-btn-color: #188ce8;
 }
 
 body {
@@ -202,7 +203,7 @@ img {
   padding-top: 200px;
   padding-bottom: 200px;
   background-color: var(--first-bg-color);
-  text-align: center;
+
   background-image: linear-gradient(to left top, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url('../images/background-hero.jpg');
   max-width: 1600px;
@@ -221,8 +222,12 @@ img {
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  text-align: center;
 }
 .main-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px 32px;
 
   background-color: var(--accent-text-color);
@@ -230,7 +235,7 @@ img {
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
-
+  text-align: center;
   color: var(--primary-white-color);
   border: 4px;
   border-radius: 4px;
@@ -303,12 +308,16 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.close-btn:hover .close-icon {
+  fill: var(--accent-text-color);
+}
+
 .close-icon {
   fill: rgba(0, 0, 0, 1);
 }
 
 .modal-form {
-  margin-top: 30px;
+  margin-top: 12px;
 }
 .modal-title {
   font-size: 20px;
@@ -317,23 +326,116 @@ img {
 }
 
 .modal-label {
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
   font-size: 12px;
   font-weight: 400;
-  line-height: 1.71;
+  line-height: 1.17;
   letter-spacing: 0.01em;
   color: var(--primary-text-color);
 }
+
 .form-content {
-  display: block;
   width: 100%;
+  height: 40px;
+  margin-top: 4px;
+  padding-left: 40px;
+  padding-right: 10px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  fill: var(--primary-title-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-content:focus {
+  outline: none;
+  border: 1px solid var(--accent-text-color);
+}
+
+.form-content:focus + .modal-form-icon {
+  fill: var(--accent-text-color);
+}
+.feedback {
+  margin-bottom: 20px;
+}
 .feedback-area {
   height: 120px;
+  padding: 16px 12px;
+  resize: none;
+}
+
+.feedback-area::placeholder {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.checkbox-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 0.58;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+}
+.checkbox-label::before {
+  content: '';
+  width: 16px;
+  height: 15px;
+  margin-right: 9px;
+  border: 2px solid var(--primary-title-color);
+}
+
+.check-agree:checked + .checkbox-label::before {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='15' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='16' height='15' rx='2' fill='%232196F3'/%3e%3cpath d='m3.957 7.752-.069-.066-.069.065-.888.842-.076.072.076.073 3.496 3.334.069.066.069-.066 7.504-7.158.076-.073-.076-.072-.882-.841-.069-.066-.069.066-6.553 6.246-2.539-2.422Z' fill='%23fff' stroke='%23fff' stroke-width='.2'/%3e%3c/svg%3e");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: currentColor;
+}
+.policy-link {
+  color: var(--accent-text-color);
+}
+
+.modal-btn {
+  display: block;
+  margin: auto;
+  margin-right: auto;
+  padding: 10px 55px;
+
+  font-weight: 700;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  text-align: center;
+
+  color: var(--primary-white-color);
+  background-color: var(--accent-text-color);
+
   border: 4px;
   border-radius: 4px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  resize: none;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: var(--accent-btn-color);
 }
 /* =========End of Hero========= */
 /* ==========Features============ */
@@ -375,6 +477,7 @@ img {
 
   color: var(--primary-text-color);
 }
+
 /* ========End of features====== */
 
 /* =========Working==============*/
@@ -631,8 +734,6 @@ img {
   border: 4px;
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-
-  /* outline: 1px solid tomato; */
 }
 
 .subscription-text {
