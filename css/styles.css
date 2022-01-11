@@ -229,6 +229,8 @@ img {
   margin-left: auto;
   margin-right: auto;
   padding: 10px 32px;
+  min-width: 200px;
+  min-height: 50px;
 
   background-color: var(--accent-text-color);
   font-weight: 700;
@@ -369,6 +371,7 @@ img {
   margin-bottom: 20px;
 }
 .feedback-area {
+  display: block;
   height: 120px;
   padding: 16px 12px;
   resize: none;
@@ -400,6 +403,7 @@ img {
   height: 15px;
   margin-right: 9px;
   border: 2px solid var(--primary-title-color);
+  border-radius: 3px;
 }
 
 .check-agree:checked + .checkbox-label::before {
@@ -418,6 +422,8 @@ img {
   margin: auto;
   margin-right: auto;
   padding: 10px 55px;
+  min-width: 200px;
+  min-height: 50px;
 
   font-weight: 700;
   line-height: 1.87;
@@ -637,13 +643,16 @@ img {
 
   background-color: var(--first-bg-color);
 }
-.footer-element {
-  margin-right: 70px;
-}
 .footer-content {
   align-items: baseline;
   display: flex;
 }
+
+.footer-element {
+  margin-right: 70px;
+  flex-grow: 1;
+}
+
 .footer .logo {
   color: var(--primary-white-color);
 }
@@ -701,9 +710,6 @@ img {
 .social-join-icon {
   fill: var(--primary-white-color);
 }
-.subscription {
-  margin-left: auto;
-}
 
 .email-send {
   width: 358px;
@@ -720,15 +726,9 @@ img {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 50px;
-
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 0.53;
-  letter-spacing: 0.06em;
-  text-align: center;
-  color: var(--primary-white-color);
+  padding: 10px 28px 10px 29px;
+  min-width: 200px;
+  min-height: 50px;
 
   background-color: var(--accent-text-color);
   border: 4px;
@@ -738,6 +738,12 @@ img {
 
 .subscription-text {
   margin-right: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: var(--primary-white-color);
 }
 /* ======================End of Main============== */
 /* =====================Page Potfolio============== */
